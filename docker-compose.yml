@@ -1,0 +1,50 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: ./backend
+    command: npm run start:dev
+    container_name: fifash-api
+    ports:
+      - 8000:8000
+    volumes:
+      - /app/node_modules
+      - ./backend:/backend
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_SERVER=db
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=postgres
+    depends_on:
+      - db
+    links:
+      - db:db
+  frontend:
+    build:
+      context: ./frontend
+    container_name: fifash-frontend
+    stdin_open: true
+    command: npm run dev
+    volumes:
+      - /app/node_modules
+      - ./frontend:/frontend
+    ports:
+      - 3000:3000
+  db:
+    image: postgres:13-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_SERVER=db
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=postgres
+    expose:
+      - "5432"
+    ports:
+      - "4432:5432"
+volumes:
+  frontend:
+  backend:

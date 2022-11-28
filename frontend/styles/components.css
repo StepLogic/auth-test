@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+
+@layer base {
+  input {
+    background: theme(color[grey-300]);
+    border-radius: 0;
+    padding-left: 10px;
+    /* min-width: 325px; */
+    width: 100%;
+    height: 70px;
+  }
+  input:focus {
+    outline: none;
+    box-shadow: 0px 0px 0.1rem 1rem theme(color[brown-100]);
+  }
+  fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    align-items: flex-start;
+    width: auto;
+  }
+  label {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    color: #000000;
+  }
+  button svg {
+  }
+}
+@layer components {
+  .no-style {
+    background: none;
+    border: none;
+  }
+  .btn {
+    border-radius: none;
+    background: none;
+    padding: 12px 25px;
+    width: fit-content;
+    height: fit-content;
+  }
+  .btn-primary {
+    background: black;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #f0f3f5;
+    text-transform: uppercase;
+  }
+  .btn-brown {
+    background: theme(color[brown-100]);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #f0f3f5;
+    text-transform: uppercase;
+  }
+  .btn-lg {
+    width: 100%;
+  }
+  .navbar .container {
+    @apply flex flex-row items-center justify-between h-full py-4 px-2 mx-auto;
+  }
+  .navbar {
+    width: 100%;
+    background: #efefed;
+    position: fixed;
+    z-index: 100;
+    @apply h-[60px];
+  }
+  .link {
+    @apply text-black;
+  }
+  .navbar svg {
+    @apply w-8 h-8 text-black  lg:w-6 lg:h-6;
+  }
+  .sideMenu {
+    position: fixed;
+    z-index: 900;
+    background: rgba(255, 255, 255, 0.9);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    display: none;
+  }
+  .sideMenu[data-open="true"] {
+    display: block;
+  }
+  .sideMenu .content {
+    background: white;
+    height: 100%;
+    width: 95%;
+    margin-right: auto;
+  }
+}
