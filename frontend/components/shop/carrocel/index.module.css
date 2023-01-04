@@ -1,0 +1,104 @@
+.ori{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.car{
+    display: flex;
+    flex-direction: column;
+    padding-top: 4rem;
+}
+.txt{
+    color: black;
+
+    display: flex;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FAEDCD ;
+    border-radius: 50px;
+    padding-left: 1rem;
+    padding-right: 2rem;
+    box-shadow: 2px 2px 2px gray;
+}
+.txt>input{
+    height: 2rem;
+    background-color: transparent;
+}
+.ads{
+    display: flex;
+    gap: 1rem;
+}
+.options>div{
+    display: flex;
+}
+.options>div>svg{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.options{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+.categories{
+    width: 20%;
+}
+.categories>div{
+    display: flex;
+    justify-content: space-between;
+}
+.categories>div>p{
+    color: black;
+    text-align: center;
+}
+.categories>div>img{
+    width: 50px;
+    height: 50px;
+}
+.slideShow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+}
+.signUp{
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    border: solid;
+}
+.butt>button{
+    margin: 5%;
+    border-radius: 50px;
+}
+.join{
+    background-color: #F31919;
+    color: white;
+}
+.signIn{
+    color: black;
+    border: black solid;
+}
+.butt{
+    display: flex;
+    flex-direction: column;
+    height: 30%;
+    padding: 2rem;
+    border: solid;
+}
+.ad{
+    display: flex;
+    flex-direction: column;
+}
+.ad>div{
+    display: flex;
+    justify-content: space-between;
+}
+.right-arrow{
+    src: url("./svg/arrowRight.svg");
+    height: 80px;
+}
